@@ -8,6 +8,25 @@ namespace CafeApp.Models
 {
     public class Masa
     {
+        private bool _müsaitMi = true;
+
+        public bool MüsaitMi
+        {
+            get
+            {
+                return _müsaitMi;
+            }
+            set
+            {
+                _müsaitMi = value;
+            }
+        } //garson masaya müşteri alabilir mi alamaz mı bunun değerini tutar
+
+        public Kat MasaninKati { get; set; }    
+
+
+
+
 
     }
 }

@@ -23,6 +23,10 @@ namespace CafeApp.Models
             this.KatTipleri = kat;
         }
 
+        public List<Masa> KattakiMasalar { get; set; }
+
+
+
 
 
 
