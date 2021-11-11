@@ -8,7 +8,7 @@ namespace CafeApp.Models
 {
     public class Siparis
     {
-        private DateTime _siparisDateTime,_siparisTeslimDateTime;
+        private DateTime _siparisDateTime,_siparisTeslimDateTime,_siparisTeslimSüresiDateTime;
         public List<Urun> UrunlerList { get; set; }
         public Masa SiparisMasasi { get; set; }
         public DateTime SiparisDateTime
@@ -22,8 +22,18 @@ namespace CafeApp.Models
             set { _siparisTeslimDateTime = DateTime.Now; }
         }
 
+        //public DateTime SiparisTeslimSüresi
+        //{
+        //    get;
+        //    set
+        //    {
+        //        _siparisTeslimSüresiDateTime =(DateTime)_siparisDateTime -(DateTime) _siparisTeslimDateTime;
+        //    }
+        //}
+
         public bool TeslimEdildiMi { get; set; }
 
+        
 
 
 
