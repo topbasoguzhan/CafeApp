@@ -25,16 +25,6 @@ namespace CafeApp.Models
 
         public List<Masa> KattakiMasalar { get; set; }
 
-
-
-
-
-
-
-
-
-
-
-
+        
     }
 }
