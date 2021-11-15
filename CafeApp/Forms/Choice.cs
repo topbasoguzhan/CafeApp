@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CafeApp.Forms
 {
-    public partial class FrmKurulum : Form
+    public partial class Choice : Form
     {
-        public FrmKurulum()
+        public Choice()
         {
             InitializeComponent();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CafeApp.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,12 +11,18 @@ using System.Windows.Forms;
 
 namespace CafeApp
 {
-    public partial class Form1 : Form
+    public partial class BeginForm : Form
     {
-        public Form1()
+        public BeginForm()
         {
             InitializeComponent();
         }
 
+        private void btnKaydet1_Click(object sender, EventArgs e)
+        {
+            Choice choice = new Choice();
+            choice.Show();
+            this.Hide();
+        }
     }
 }
