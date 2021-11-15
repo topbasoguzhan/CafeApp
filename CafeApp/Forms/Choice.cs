@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CafeApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace CafeApp.Forms
         public Choice()
         {
             InitializeComponent();
+
         }
+  
+
+        public Kat KatBilgisi { get; set; }
+
+        private void Choice_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < KatBilgisi.KatSayisi; i++)
+            {
+                cmbKat.Items.Add(i.ToString());
+            }
+
+        }
+
+        
     }
 }

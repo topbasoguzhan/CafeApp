@@ -37,9 +37,10 @@
             // btnKaydet1
             // 
             this.btnKaydet1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnKaydet1.Location = new System.Drawing.Point(12, 79);
+            this.btnKaydet1.Location = new System.Drawing.Point(10, 59);
+            this.btnKaydet1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKaydet1.Name = "btnKaydet1";
-            this.btnKaydet1.Size = new System.Drawing.Size(412, 312);
+            this.btnKaydet1.Size = new System.Drawing.Size(360, 234);
             this.btnKaydet1.TabIndex = 0;
             this.btnKaydet1.Text = "Kaydet";
             this.btnKaydet1.UseVisualStyleBackColor = true;
@@ -49,9 +50,9 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(10, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(412, 20);
+            this.label1.Size = new System.Drawing.Size(326, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Kafe uygulamamıza hoşgeldiniz! Lütfen adımları takip ediniz.";
             // 
@@ -59,28 +60,30 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 39);
+            this.label2.Location = new System.Drawing.Point(10, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 20);
+            this.label2.Size = new System.Drawing.Size(103, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Kat sayısını giriniz:";
             // 
             // txtKatBilgisi
             // 
-            this.txtKatBilgisi.Location = new System.Drawing.Point(148, 36);
+            this.txtKatBilgisi.Location = new System.Drawing.Point(130, 27);
+            this.txtKatBilgisi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtKatBilgisi.Name = "txtKatBilgisi";
-            this.txtKatBilgisi.Size = new System.Drawing.Size(125, 27);
+            this.txtKatBilgisi.Size = new System.Drawing.Size(110, 23);
             this.txtKatBilgisi.TabIndex = 3;
             // 
             // BeginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 338);
             this.Controls.Add(this.txtKatBilgisi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnKaydet1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BeginForm";
             this.Text = "Form1";
             this.ResumeLayout(false);

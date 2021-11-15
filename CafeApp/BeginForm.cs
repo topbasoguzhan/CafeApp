@@ -1,4 +1,5 @@
 ﻿using CafeApp.Forms;
+using CafeApp.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,9 +21,21 @@ namespace CafeApp
 
         private void btnKaydet1_Click(object sender, EventArgs e)
         {
+
+            Kat kat = new Kat(KatYapisi.Salon)
+            {
+                 KatSayisi = int.Parse(txtKatBilgisi.Text),    
+                 
+            };
+
             Choice choice = new Choice();
+            choice.KatBilgisi = kat;
             choice.Show();
             this.Hide();
+         
+
         }
+
+       
     }
 }

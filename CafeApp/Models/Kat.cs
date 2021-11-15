@@ -13,6 +13,7 @@ namespace CafeApp.Models
         Salon,
         Havuz,
 
+
     }
     public class Kat
     {
@@ -22,6 +23,9 @@ namespace CafeApp.Models
         {
             this.KatTipleri = kat;
         }
+
+       
+        public int KatSayisi { get; set; }
 
         public List<Masa> KattakiMasalar { get; set; }
 
