@@ -13,6 +13,6 @@ namespace CafeApp.Models
         public List<Masa> MasalarList { get; set; }//kafedeki toplam masa nesnesi
 
         public List<Siparis> TeslimEdilenSiparisler { get; set; }// z raporu veri içeriği
-
+    
     }
 }
