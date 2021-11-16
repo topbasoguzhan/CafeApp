@@ -10,13 +10,16 @@ namespace CafeApp.Models
     public class Urun
     {
         public int UrunId { get; set; }
-        public string UrunAdi { get; set; }
+        public string UrunAd { get; set; }
         public double UrunFiyat { get; set; }
-        public string UrunAciklamasi { get; set; }
+        public string UrunAciklama { get; set; }
         public int UrunStok { get; set; }
-        public Bitmap UrunGorseli { get; set; }
+        public Bitmap UrunGorsel { get; set; }
 
-
+        public override string ToString()
+        {
+            return string.Format("{0} - {1:0.00}₺", UrunAdi, UrunFiyat);
+        }
 
     }
 }
