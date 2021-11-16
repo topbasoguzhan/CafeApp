@@ -6,15 +6,7 @@ using System.Threading.Tasks;
 
 namespace CafeApp.Models
 {
-    //public enum KatYapisi
-    //{
-    //    Bahce,
-    //    Teras,
-    //    Salon,
-    //    Havuz,
-
-
-    //}
+    
     public class Kat
     {
         //public KatYapisi KatTipleri { get; set; }
@@ -29,8 +21,10 @@ namespace CafeApp.Models
 
         public int KattakiMasalar { get; set; }
 
-        //public List<Masa> KattakiMasalar { get; set; }
+        //public List<Masa> KatMasalari { get; set; }
 
+        public List<Alan> Alanlar { get; set; }
+        
         
     }
 }

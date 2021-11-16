@@ -35,15 +35,18 @@ namespace CafeApp
 
             };
 
+            kafeDb.KafeAdi = txtKafeAdi.Text;
+            kafeDb.KatSayisi = Convert.ToInt32(txtKatBilgisi.Text);
+            kafeDb.VeritabaninaYaz(_path, kafeDb);
+            kafeDb.VeritabaniOku(_path, kafeDb);
+
+
             Choice choice = new Choice();
             choice.KatBilgisi = kat;
             choice.Show();
             this.Hide();
 
-            kafeDb.KafeAdi = txtKafeAdi.Text;
-            kafeDb.KatSayisi = Convert.ToInt32(txtKatBilgisi.Text);
-            kafeDb.VeritabaninaYaz(_path,kafeDb);
-            kafeDb.VeritabaniOku(_path, kafeDb);
+           
 
 
         }

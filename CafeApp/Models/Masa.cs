@@ -22,7 +22,7 @@ namespace CafeApp.Models
             }
         } //garson masaya müşteri alabilir mi alamaz mı bunun değerini tutar
 
-           public Kat MasaninKati { get; set; }    
+           //public Kat MasaninKati { get; set; }    
 
 
     }

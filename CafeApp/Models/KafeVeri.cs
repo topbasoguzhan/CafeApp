@@ -15,7 +15,7 @@ namespace CafeApp.Models
         public string KafeAdi { get; set; }
         public int KatSayisi { get; set; }
         public List<Kat> KatList { get; set; }
-        public List<Menu> MenuList { get; set; }
+        public List<Urun> MenuList { get; set; }
 
         public void VeritabaniOku(string str,KafeVeri kafeDb)
         {
@@ -56,9 +56,7 @@ namespace CafeApp.Models
             {
                 Debug.WriteLine(ex);
             }
-
-
-
+            
         }
 
     }
