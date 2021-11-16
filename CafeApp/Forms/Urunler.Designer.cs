@@ -43,34 +43,36 @@
             // lblBirimFiyat
             // 
             this.lblBirimFiyat.AutoSize = true;
-            this.lblBirimFiyat.Location = new System.Drawing.Point(181, 9);
+            this.lblBirimFiyat.Location = new System.Drawing.Point(158, 7);
             this.lblBirimFiyat.Name = "lblBirimFiyat";
-            this.lblBirimFiyat.Size = new System.Drawing.Size(101, 20);
+            this.lblBirimFiyat.Size = new System.Drawing.Size(80, 15);
             this.lblBirimFiyat.TabIndex = 0;
             this.lblBirimFiyat.Text = "Birim Fiyatı(₺)";
             // 
             // txtUrunAd
             // 
-            this.txtUrunAd.Location = new System.Drawing.Point(12, 32);
+            this.txtUrunAd.Location = new System.Drawing.Point(10, 24);
+            this.txtUrunAd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUrunAd.Name = "txtUrunAd";
-            this.txtUrunAd.Size = new System.Drawing.Size(144, 27);
+            this.txtUrunAd.Size = new System.Drawing.Size(126, 23);
             this.txtUrunAd.TabIndex = 1;
             // 
             // lblUrunAdi
             // 
             this.lblUrunAdi.AutoSize = true;
-            this.lblUrunAdi.Location = new System.Drawing.Point(12, 9);
+            this.lblUrunAdi.Location = new System.Drawing.Point(10, 7);
             this.lblUrunAdi.Name = "lblUrunAdi";
-            this.lblUrunAdi.Size = new System.Drawing.Size(67, 20);
+            this.lblUrunAdi.Size = new System.Drawing.Size(54, 15);
             this.lblUrunAdi.TabIndex = 0;
             this.lblUrunAdi.Text = "Ürün Adı";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(486, 12);
+            this.button1.Location = new System.Drawing.Point(425, 9);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 48);
+            this.button1.Size = new System.Drawing.Size(97, 36);
             this.button1.TabIndex = 2;
             this.button1.Text = "SİL";
             this.button1.UseVisualStyleBackColor = false;
@@ -79,9 +81,10 @@
             // 
             this.btnUrunEkle.BackColor = System.Drawing.Color.LimeGreen;
             this.btnUrunEkle.ForeColor = System.Drawing.Color.Black;
-            this.btnUrunEkle.Location = new System.Drawing.Point(359, 11);
+            this.btnUrunEkle.Location = new System.Drawing.Point(314, 8);
+            this.btnUrunEkle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUrunEkle.Name = "btnUrunEkle";
-            this.btnUrunEkle.Size = new System.Drawing.Size(109, 48);
+            this.btnUrunEkle.Size = new System.Drawing.Size(95, 36);
             this.btnUrunEkle.TabIndex = 2;
             this.btnUrunEkle.Text = "EKLE";
             this.btnUrunEkle.UseVisualStyleBackColor = false;
@@ -89,25 +92,27 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 85);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 64);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(585, 449);
+            this.dataGridView1.Size = new System.Drawing.Size(512, 337);
             this.dataGridView1.TabIndex = 3;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(181, 33);
+            this.numericUpDown1.Location = new System.Drawing.Point(158, 25);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(150, 27);
+            this.numericUpDown1.Size = new System.Drawing.Size(131, 23);
             this.numericUpDown1.TabIndex = 4;
             // 
             // Urunler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 546);
+            this.ClientSize = new System.Drawing.Size(529, 410);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnUrunEkle);
@@ -116,6 +121,7 @@
             this.Controls.Add(this.lblUrunAdi);
             this.Controls.Add(this.lblBirimFiyat);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Urunler";
             this.Text = "Menu Olusturucu";
             this.Load += new System.EventHandler(this.Urunler_Load);
