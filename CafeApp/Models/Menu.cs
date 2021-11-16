@@ -13,8 +13,8 @@ namespace CafeApp.Models
         public void UrunYukle()
         {
             Urun urun = new Urun();
-            urun.UrunAciklamasi = "Deneme";
-            urun.UrunAdi = "Deneme Ürünü";
+            urun.UrunAciklama = "Deneme";
+            urun.UrunAd = "Deneme Ürünü";
             urun.UrunFiyat = 100.0;
             //urun.UrunId // linq sorgusu ile json üzerinden ürünleri okuyarak en son eklenen ürünün bir sonraki indeksini otomatik alacak // outo increment oi
             //urun.UrunGorseli

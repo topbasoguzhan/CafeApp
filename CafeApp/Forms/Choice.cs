@@ -38,24 +38,30 @@ namespace CafeApp.Forms
         {
             //flowLayoutPanel1.Controls.Clear();
 
+
             Kat kat = new Kat()
             {
                 KattakiMasalar = int.Parse(txtMasaSayisi.Text)
             };
 
-            for (int i = 1; i <= kat.KattakiMasalar; i++)
+            if (cmbKat.SelectedItem == null)
+                MessageBox.Show("Lutfen bulundugu katı seciniz ");
+            else
             {
-                btn=new Button();
-                
-                btn.Text = $"M{cmbKat.SelectedItem + Convert.ToString(cmbKatTip.SelectedItem).Substring(0, 1).ToUpper() + i.ToString()}";
-                btn.Width = 150;
-                btn.Height = 100;
-                btn.BackColor = Color.Gray;
-                btn.ForeColor = Color.Red;
-                btn.Margin = new  Padding(2);
-                btn.Click += Btn_Click;
-                btn.TabIndex = i;
-                flowLayoutPanel1.Controls.Add(btn);    
+                for (int i = 1; i <= kat.KattakiMasalar; i++)
+                {
+                    btn = new Button();
+
+                    btn.Text = $"M{cmbKat.SelectedItem + Convert.ToString(cmbKatTip.SelectedItem).Substring(0, 1).ToUpper() + i.ToString()}";
+                    btn.Width = 150;
+                    btn.Height = 100;
+                    btn.BackColor = Color.Gray;
+                    btn.ForeColor = Color.Red;
+                    btn.Margin = new Padding(2);
+                    btn.Click += Btn_Click;
+                    btn.TabIndex = i;
+                    flowLayoutPanel1.Controls.Add(btn);
+                }
             }
 
         }
