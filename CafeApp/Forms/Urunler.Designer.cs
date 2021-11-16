@@ -117,7 +117,8 @@
             this.Controls.Add(this.lblBirimFiyat);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Urunler";
-            this.Text = "Ürünler";
+            this.Text = "Menu Olusturucu";
+            this.Load += new System.EventHandler(this.Urunler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

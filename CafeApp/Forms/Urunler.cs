@@ -16,5 +16,10 @@ namespace CafeApp.Forms
         {
             InitializeComponent();
         }
+
+        private void Urunler_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

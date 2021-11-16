@@ -27,7 +27,6 @@ namespace CafeApp.Forms
                 cmbKat.Items.Add(i.ToString());
             }
              
-             
              cmbKatTip.DataSource = Enum.GetNames(typeof(KatTipi.KatYapisi));
 
         }
@@ -46,7 +45,7 @@ namespace CafeApp.Forms
             for (int i = 1; i <= kat.KattakiMasalar; i++)
             {
                 btn=new Button();
-                
+                //
                 btn.Text = $"M{cmbKat.SelectedItem + Convert.ToString(cmbKatTip.SelectedItem).Substring(0, 1).ToUpper() + i.ToString()}";
                 btn.Width = 150;
                 btn.Height = 100;
@@ -57,7 +56,7 @@ namespace CafeApp.Forms
                 btn.TabIndex = i;
                 flowLayoutPanel1.Controls.Add(btn);    
             }
-
+            
         }
 
         private void Btn_Click(object? sender, EventArgs e)

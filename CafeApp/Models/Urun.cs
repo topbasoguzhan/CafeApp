@@ -18,7 +18,7 @@ namespace CafeApp.Models
 
         public override string ToString()
         {
-            return string.Format("{0} - {1:0.00}₺", UrunAdi, UrunFiyat);
+            return string.Format("{0} - {1:0.00}₺", UrunAd, UrunFiyat);
         }
 
     }
