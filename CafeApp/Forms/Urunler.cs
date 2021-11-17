@@ -190,5 +190,12 @@ namespace CafeApp.Forms
                 dgvUrunler.Rows.RemoveAt(dgvUrunlerSelectedRow.Index);
             }//veritabınından silme operasyonu uygulancak
         }
+
+        private void btnTamam_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AnaSayfa anaSayfa = new AnaSayfa();
+            anaSayfa.Show();
+        }
     }
 }

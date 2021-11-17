@@ -43,6 +43,7 @@
             this.pbUrunResim = new System.Windows.Forms.PictureBox();
             this.txtFiyat = new System.Windows.Forms.TextBox();
             this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnTamam = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUrunler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUrunResim)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +76,7 @@
             // btnSil
             // 
             this.btnSil.BackColor = System.Drawing.Color.Red;
-            this.btnSil.Location = new System.Drawing.Point(759, 196);
+            this.btnSil.Location = new System.Drawing.Point(710, 196);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(111, 48);
             this.btnSil.TabIndex = 2;
@@ -87,7 +88,7 @@
             // 
             this.btnUrunEkle.BackColor = System.Drawing.Color.LimeGreen;
             this.btnUrunEkle.ForeColor = System.Drawing.Color.Black;
-            this.btnUrunEkle.Location = new System.Drawing.Point(763, 24);
+            this.btnUrunEkle.Location = new System.Drawing.Point(710, 24);
             this.btnUrunEkle.Name = "btnUrunEkle";
             this.btnUrunEkle.Size = new System.Drawing.Size(109, 48);
             this.btnUrunEkle.TabIndex = 2;
@@ -175,7 +176,7 @@
             // 
             this.btnGuncelle.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnGuncelle.ForeColor = System.Drawing.Color.Black;
-            this.btnGuncelle.Location = new System.Drawing.Point(761, 106);
+            this.btnGuncelle.Location = new System.Drawing.Point(710, 105);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(109, 48);
             this.btnGuncelle.TabIndex = 12;
@@ -183,11 +184,24 @@
             this.btnGuncelle.UseVisualStyleBackColor = false;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
+            // btnTamam
+            // 
+            this.btnTamam.BackColor = System.Drawing.Color.Blue;
+            this.btnTamam.ForeColor = System.Drawing.Color.Black;
+            this.btnTamam.Location = new System.Drawing.Point(856, 106);
+            this.btnTamam.Name = "btnTamam";
+            this.btnTamam.Size = new System.Drawing.Size(109, 48);
+            this.btnTamam.TabIndex = 13;
+            this.btnTamam.Text = "TAMAMLA";
+            this.btnTamam.UseVisualStyleBackColor = false;
+            this.btnTamam.Click += new System.EventHandler(this.btnTamam_Click);
+            // 
             // Urunler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 547);
+            this.Controls.Add(this.btnTamam);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.txtFiyat);
             this.Controls.Add(this.pbUrunResim);
@@ -229,5 +243,6 @@
         private System.Windows.Forms.PictureBox pbUrunResim;
         private System.Windows.Forms.TextBox txtFiyat;
         private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.Button btnTamam;
     }
 }
