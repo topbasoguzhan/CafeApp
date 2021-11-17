@@ -128,6 +128,7 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1293, 551);
             this.flowLayoutPanel1.TabIndex = 8;
             this.flowLayoutPanel1.Click += new System.EventHandler(this.Btn_Click);
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // btnMenuyeGec
             // 

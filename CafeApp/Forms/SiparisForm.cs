@@ -7,14 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CafeApp.Models;
 
 namespace CafeApp.Forms
 {
     public partial class SiparisForm : Form
     {
-        public SiparisForm()
+        private Masa ramMasa = new Masa();
+        public SiparisForm(Masa masa)
         {
+            ramMasa = masa;
+            
             InitializeComponent();
+        }
+
+        private void SiparisForm_Load(object sender, EventArgs e)
+        {
+            lblMasaNo.Text = ramMasa.MasaID;
+        }
+
+        private void lblMasaNo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

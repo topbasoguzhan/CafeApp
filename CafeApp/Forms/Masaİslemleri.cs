@@ -1,0 +1,126 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using CafeApp.Models;
+using Newtonsoft.Json;
+
+namespace CafeApp.Forms
+{
+    public partial class Masaİslemleri : Form
+    {
+        public Masaİslemleri()
+        {
+            InitializeComponent();
+        }
+        public static string _path = "C://KafeEnvanteri//db.json";
+        KafeVeri kafeDb = new KafeVeri();
+        private Button btn;
+        public List<Masa> MasalarList = new List<Masa>();
+        private void Masaİslemleri_Load(object sender, EventArgs e)
+        {
+            kafeDb.KatList = new List<Kat>();
+
+            VeritabaniOku();
+            
+            
+            foreach (var kat in kafeDb.KatList)
+            {
+                foreach (var alan in kat.Alanlar)
+                {
+                    string alanAdi = alan.KatTipi;
+                    string bulundugukat = alan.BulunduguKat.ToString();
+                    for (int i = 1; i <= alan.MasaList.Count; i++)
+                    {
+                        Masa masa = new Masa()
+                        {
+                            MasaID = bulundugukat +'.'+ alanAdi +"."+ Convert.ToInt32(i),
+                            MasaninBulunduguKat = bulundugukat,
+                            MasaninKatTipi = alanAdi,
+                            MüsaitMi = true
+                        };
+                        
+                        
+                        btn = new Button();
+                        btn.Text = masa.MasaID;
+
+                        btn.Width = 150;
+                        btn.Height = 100;
+                        btn.BackColor = Color.Gray;
+                        btn.ForeColor = Color.Aquamarine;
+                        btn.Margin = new Padding(2);
+                        btn.BackgroundImageLayout = ImageLayout.Stretch;
+                        btn.BackgroundImage = Properties.Resources.logo_default;
+                        
+                        btn.Click += Btn_Click;
+                        btn.TabIndex = i;
+                        flowLayoutPanel1.Controls.Add(btn);
+                        MasalarList.Add(masa);
+                    }
+                }
+            }
+
+            
+        }
+        public void VeritabaniOku()
+        {
+
+            if (File.Exists(_path))
+            {
+                try
+                {
+                    FileStream fileStream = new FileStream(_path, FileMode.Open);
+                    StreamReader reader = new StreamReader(fileStream);
+                    string dosyaIcerigi = reader.ReadToEnd();
+                    reader.Close();
+                    reader.Dispose();
+
+                    kafeDb = JsonConvert.DeserializeObject<KafeVeri>(dosyaIcerigi);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex);
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory("C://KafeEnvanteri");
+            }
+        }
+        private void Btn_Click(object? sender, EventArgs e)
+        {
+            foreach (Masa masa in MasalarList)
+            {
+                if (btn.Text == masa.MasaID)
+                {
+                    this.Hide();
+                    SiparisForm siparisForm = new SiparisForm(masa);
+                    siparisForm.Show();
+                }
+            }
+        }
+
+        private void flowLayoutPanel1_DoubleClick(object sender, EventArgs e)
+        {
+            foreach (Masa masa in MasalarList)
+            {
+                if (btn.Text == masa.MasaID)
+                {
+                    this.Hide();
+                    SiparisForm siparisForm = new SiparisForm(masa);
+                    siparisForm.Show();
+                }
+            }
+        }
+
+        
+    }
+}

@@ -16,5 +16,12 @@ namespace CafeApp.Forms
         {
             InitializeComponent();
         }
+
+        private void btnMasaİslemleri_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Masaİslemleri masaİslemleri = new Masaİslemleri();
+            masaİslemleri.Show();
+        }
     }
 }

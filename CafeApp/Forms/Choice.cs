@@ -133,5 +133,10 @@ namespace CafeApp.Forms
             Urunler urunler = new Urunler();
             urunler.Show();
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -22,8 +22,11 @@ namespace CafeApp.Models
             }
         } //garson masaya müşteri alabilir mi alamaz mı bunun değerini tutar
 
-           //public Kat MasaninKati { get; set; }    
+        public string MasaninBulunduguKat { get; set; }
+        public string MasaninKatTipi { get; set; }
+        public string MasaID { get; set; }
 
+        public List<Siparis> SiparisList { get; set; }
 
     }
 }

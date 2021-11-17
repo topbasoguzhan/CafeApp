@@ -36,12 +36,12 @@
             this.btnSiparisEkle = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.GroupBox();
-            this.lblMasaNo = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbMasaNolar = new System.Windows.Forms.ComboBox();
-            this.btnMasaTasi = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.lblOdemeTutari = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnMasaTasi = new System.Windows.Forms.Button();
+            this.cmbMasaNolar = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblMasaNo = new System.Windows.Forms.Label();
             this.btnOdemeAl = new System.Windows.Forms.Button();
             this.btnSiparisİptal = new System.Windows.Forms.Button();
             this.btnAdisyonSil = new System.Windows.Forms.Button();
@@ -131,38 +131,27 @@
             this.panel1.TabStop = false;
             this.panel1.Text = "Masa İşlemleri";
             // 
-            // lblMasaNo
+            // lblOdemeTutari
             // 
-            this.lblMasaNo.BackColor = System.Drawing.Color.Gold;
-            this.lblMasaNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMasaNo.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMasaNo.Location = new System.Drawing.Point(7, 23);
-            this.lblMasaNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMasaNo.Name = "lblMasaNo";
-            this.lblMasaNo.Size = new System.Drawing.Size(138, 120);
-            this.lblMasaNo.TabIndex = 3;
-            this.lblMasaNo.Text = "01";
-            this.lblMasaNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblOdemeTutari.AutoSize = true;
+            this.lblOdemeTutari.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblOdemeTutari.Location = new System.Drawing.Point(148, 156);
+            this.lblOdemeTutari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOdemeTutari.Name = "lblOdemeTutari";
+            this.lblOdemeTutari.Size = new System.Drawing.Size(65, 22);
+            this.lblOdemeTutari.TabIndex = 5;
+            this.lblOdemeTutari.Text = "10.00₺";
             // 
-            // label4
+            // label5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(167, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 19);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Masa No:";
-            // 
-            // cmbMasaNolar
-            // 
-            this.cmbMasaNolar.FormattingEnabled = true;
-            this.cmbMasaNolar.Location = new System.Drawing.Point(152, 45);
-            this.cmbMasaNolar.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.cmbMasaNolar.Name = "cmbMasaNolar";
-            this.cmbMasaNolar.Size = new System.Drawing.Size(111, 25);
-            this.cmbMasaNolar.TabIndex = 12;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(35, 156);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 19);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Ödeme Tutarı:";
             // 
             // btnMasaTasi
             // 
@@ -176,27 +165,39 @@
             this.btnMasaTasi.Text = "Masa Taşı";
             this.btnMasaTasi.UseVisualStyleBackColor = false;
             // 
-            // label5
+            // cmbMasaNolar
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(35, 156);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 19);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Ödeme Tutarı:";
+            this.cmbMasaNolar.FormattingEnabled = true;
+            this.cmbMasaNolar.Location = new System.Drawing.Point(152, 45);
+            this.cmbMasaNolar.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.cmbMasaNolar.Name = "cmbMasaNolar";
+            this.cmbMasaNolar.Size = new System.Drawing.Size(111, 25);
+            this.cmbMasaNolar.TabIndex = 12;
             // 
-            // lblOdemeTutari
+            // label4
             // 
-            this.lblOdemeTutari.AutoSize = true;
-            this.lblOdemeTutari.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOdemeTutari.Location = new System.Drawing.Point(148, 156);
-            this.lblOdemeTutari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblOdemeTutari.Name = "lblOdemeTutari";
-            this.lblOdemeTutari.Size = new System.Drawing.Size(60, 23);
-            this.lblOdemeTutari.TabIndex = 5;
-            this.lblOdemeTutari.Text = "10.00₺";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(167, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 19);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Masa No:";
+            // 
+            // lblMasaNo
+            // 
+            this.lblMasaNo.BackColor = System.Drawing.Color.Gold;
+            this.lblMasaNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMasaNo.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMasaNo.Location = new System.Drawing.Point(7, 23);
+            this.lblMasaNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMasaNo.Name = "lblMasaNo";
+            this.lblMasaNo.Size = new System.Drawing.Size(138, 120);
+            this.lblMasaNo.TabIndex = 3;
+            this.lblMasaNo.Text = "01";
+            this.lblMasaNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMasaNo.Click += new System.EventHandler(this.lblMasaNo_Click);
             // 
             // btnOdemeAl
             // 
@@ -286,6 +287,7 @@
             this.MinimizeBox = false;
             this.Name = "SiparisForm";
             this.Text = "Sipariş Ekranı";
+            this.Load += new System.EventHandler(this.SiparisForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
