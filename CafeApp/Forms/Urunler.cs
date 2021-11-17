@@ -23,20 +23,23 @@ namespace CafeApp.Forms
         }
         public static string _path = "C://KafeEnvanteri//db.json";
         KafeVeri kafeDb = new KafeVeri();
+        public BindingList<Urun> ListeofBindingList;
         private void Urunler_Load(object sender, EventArgs e)
         {
             VeritabaniOku();
 
             kafeDb.MenuList = new List<Urun>();
 
+            ListeofBindingList = new BindingList<Urun>();
+            dgvUrunler.DataSource = ListeofBindingList;
 
-            dgvUrunler.ReadOnly = true;
-            dgvUrunler.AllowUserToAddRows = false;
-            dgvUrunler.ColumnCount = 4;
-            dgvUrunler.Columns[0].Name = "Urun Adi";
-            dgvUrunler.Columns[1].Name = "Urun Aciklamasi";
-            dgvUrunler.Columns[2].Name = "Urun Fiyati";
-            dgvUrunler.Columns[3].Name = "Urun Stok";
+            //dgvUrunler.ReadOnly = true;
+            //dgvUrunler.AllowUserToAddRows = false;
+            //dgvUrunler.ColumnCount = 4;
+            //dgvUrunler.Columns[0].Name = "Urun Adi";
+            //dgvUrunler.Columns[1].Name = "Urun Aciklamasi";
+            //dgvUrunler.Columns[2].Name = "Urun Fiyati";
+            //dgvUrunler.Columns[3].Name = "Urun Stok";
         }
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
@@ -45,7 +48,7 @@ namespace CafeApp.Forms
             {
                 UrunAd = txtUrunAd.Text,
                 UrunAciklama = txtUrunAciklamasi.Text,
-                UrunFiyat = Convert.ToDouble(nmrBirimFiyat.Value),
+                UrunFiyat = Convert.ToDouble(txtFiyat.Text),
                 UrunStok = Convert.ToInt32(txtUrunStok.Text),
 
             };
@@ -58,7 +61,8 @@ namespace CafeApp.Forms
 
             kafeDb.MenuList.Add(urun);
             kafeDb.VeritabaninaYaz(_path, kafeDb);
-            dgvUrunler.Rows.Add(urun.UrunAd, urun.UrunAciklama, urun.UrunFiyat, urun.UrunStok);
+            //dgvUrunler.Rows.Add(urun.UrunAd, urun.UrunAciklama, urun.UrunFiyat, urun.UrunStok);
+            ListeofBindingList.Add(urun);
 
 
         }
@@ -119,6 +123,72 @@ namespace CafeApp.Forms
                     MessageBox.Show("Hata: Dosya okunamadı!" + ex.Message);
                 }
             }
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dgvUrunlerSelectedRow in dgvUrunler.SelectedRows)
+            {
+                dgvUrunler.Rows.RemoveAt(dgvUrunlerSelectedRow.Index);
+            }//veritabanından silinme operasyonu yazılacak
+            
+            Urun urun = new Urun()
+            {
+                UrunAd = txtUrunAd.Text,
+                UrunAciklama = txtUrunAciklamasi.Text,
+                UrunFiyat = Convert.ToDouble(txtFiyat.Text),
+                UrunStok = Convert.ToInt32(txtUrunStok.Text),
+
+            };
+            if (pbUrunResim.Image != null)
+            {
+                MemoryStream memoryStream = new MemoryStream();
+                pbUrunResim.Image.Save(memoryStream, ImageFormat.Jpeg);
+                urun.UrunGorsel = memoryStream.ToArray();
+            }
+
+            kafeDb.MenuList.Add(urun);
+            kafeDb.VeritabaninaYaz(_path, kafeDb);
+            //dgvUrunler.Rows.Add(urun.UrunAd, urun.UrunAciklama, urun.UrunFiyat, urun.UrunStok);
+            ListeofBindingList.Add(urun);
+        }
+
+        private void dgvUrunler_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
+        }
+
+        private void dgvUrunler_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
+        private void dgvUrunler_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvUrunler_MouseClick(object sender, MouseEventArgs e)
+        {
+            string ad = dgvUrunler.SelectedRows[0].Cells[1].Value + string.Empty;
+            txtUrunAd.Text = ad;
+            string aciklama = dgvUrunler.SelectedRows[0].Cells[3].Value + string.Empty;
+            txtUrunAciklamasi.Text = aciklama;
+            string fiyat = dgvUrunler.SelectedRows[0].Cells[2].Value + string.Empty;
+            txtFiyat.Text = fiyat;
+            string stok = dgvUrunler.SelectedRows[0].Cells[4].Value + string.Empty;
+            txtUrunStok.Text = stok;
+
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dgvUrunlerSelectedRow in dgvUrunler.SelectedRows)
+            {
+                dgvUrunler.Rows.RemoveAt(dgvUrunlerSelectedRow.Index);
+            }//veritabınından silme operasyonu uygulancak
         }
     }
 }

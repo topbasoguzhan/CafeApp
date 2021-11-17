@@ -37,7 +37,8 @@ namespace CafeApp.Forms
 
             cmbKatTip.DataSource = Enum.GetNames(typeof(KatTipi.KatYapisi));
             VeritabaniOku();
-            
+            kafeDb.KatList = new List<Kat>();
+            kafeDb.MasaList = new List<Masa>();
         }
         public void VeritabaniOku()
         {
@@ -69,8 +70,6 @@ namespace CafeApp.Forms
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            kafeDb.KatList = new List<Kat>();
-            kafeDb.MasaList = new List<Masa>();
             Button btn;
             Kat kat = new Kat
             {

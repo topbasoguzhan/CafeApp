@@ -35,15 +35,15 @@
             this.btnSil = new System.Windows.Forms.Button();
             this.btnUrunEkle = new System.Windows.Forms.Button();
             this.dgvUrunler = new System.Windows.Forms.DataGridView();
-            this.nmrBirimFiyat = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUrunAciklamasi = new System.Windows.Forms.TextBox();
             this.lblUrunStok = new System.Windows.Forms.Label();
             this.txtUrunStok = new System.Windows.Forms.TextBox();
             this.lblUunFotografi = new System.Windows.Forms.Label();
             this.pbUrunResim = new System.Windows.Forms.PictureBox();
+            this.txtFiyat = new System.Windows.Forms.TextBox();
+            this.btnGuncelle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUrunler)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrBirimFiyat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUrunResim)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,12 +75,13 @@
             // btnSil
             // 
             this.btnSil.BackColor = System.Drawing.Color.Red;
-            this.btnSil.Location = new System.Drawing.Point(761, 132);
+            this.btnSil.Location = new System.Drawing.Point(759, 196);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(111, 48);
             this.btnSil.TabIndex = 2;
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnUrunEkle
             // 
@@ -103,15 +104,13 @@
             this.dgvUrunler.Name = "dgvUrunler";
             this.dgvUrunler.RowHeadersWidth = 51;
             this.dgvUrunler.RowTemplate.Height = 29;
+            this.dgvUrunler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUrunler.Size = new System.Drawing.Size(954, 268);
             this.dgvUrunler.TabIndex = 3;
-            // 
-            // nmrBirimFiyat
-            // 
-            this.nmrBirimFiyat.Location = new System.Drawing.Point(181, 33);
-            this.nmrBirimFiyat.Name = "nmrBirimFiyat";
-            this.nmrBirimFiyat.Size = new System.Drawing.Size(150, 27);
-            this.nmrBirimFiyat.TabIndex = 4;
+            this.dgvUrunler.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUrunler_CellContentClick);
+            this.dgvUrunler.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUrunler_CellDoubleClick);
+            this.dgvUrunler.SelectionChanged += new System.EventHandler(this.dgvUrunler_SelectionChanged);
+            this.dgvUrunler.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvUrunler_MouseClick);
             // 
             // label1
             // 
@@ -165,18 +164,38 @@
             this.pbUrunResim.TabStop = false;
             this.pbUrunResim.Click += new System.EventHandler(this.pbUrunResim_Click);
             // 
+            // txtFiyat
+            // 
+            this.txtFiyat.Location = new System.Drawing.Point(181, 35);
+            this.txtFiyat.Name = "txtFiyat";
+            this.txtFiyat.Size = new System.Drawing.Size(150, 27);
+            this.txtFiyat.TabIndex = 11;
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnGuncelle.ForeColor = System.Drawing.Color.Black;
+            this.btnGuncelle.Location = new System.Drawing.Point(761, 106);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(109, 48);
+            this.btnGuncelle.TabIndex = 12;
+            this.btnGuncelle.Text = "GÜNCELLE";
+            this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
             // Urunler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 547);
+            this.Controls.Add(this.btnGuncelle);
+            this.Controls.Add(this.txtFiyat);
             this.Controls.Add(this.pbUrunResim);
             this.Controls.Add(this.lblUunFotografi);
             this.Controls.Add(this.txtUrunStok);
             this.Controls.Add(this.lblUrunStok);
             this.Controls.Add(this.txtUrunAciklamasi);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.nmrBirimFiyat);
             this.Controls.Add(this.dgvUrunler);
             this.Controls.Add(this.btnUrunEkle);
             this.Controls.Add(this.btnSil);
@@ -188,7 +207,6 @@
             this.Text = "Menu Olusturucu";
             this.Load += new System.EventHandler(this.Urunler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUrunler)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrBirimFiyat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUrunResim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,12 +221,13 @@
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnUrunEkle;
         private System.Windows.Forms.DataGridView dgvUrunler;
-        private System.Windows.Forms.NumericUpDown nmrBirimFiyat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUrunAciklamasi;
         private System.Windows.Forms.Label lblUrunStok;
         private System.Windows.Forms.TextBox txtUrunStok;
         private System.Windows.Forms.Label lblUunFotografi;
         private System.Windows.Forms.PictureBox pbUrunResim;
+        private System.Windows.Forms.TextBox txtFiyat;
+        private System.Windows.Forms.Button btnGuncelle;
     }
 }
