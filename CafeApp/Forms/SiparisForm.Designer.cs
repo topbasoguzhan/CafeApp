@@ -32,9 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbUrunler = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.btnSiparisEkle = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSiparisler = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.GroupBox();
             this.lblOdemeTutari = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,9 +47,10 @@
             this.btnAdisyonYaz = new System.Windows.Forms.Button();
             this.btnMasalaraDon = new System.Windows.Forms.Button();
             this.btnRezervasyon = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.nmrAdet = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSiparisler)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrAdet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -85,13 +85,6 @@
             this.cmbUrunler.Size = new System.Drawing.Size(277, 28);
             this.cmbUrunler.TabIndex = 6;
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(398, 17);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(150, 27);
-            this.numericUpDown1.TabIndex = 2;
-            // 
             // btnSiparisEkle
             // 
             this.btnSiparisEkle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -102,16 +95,17 @@
             this.btnSiparisEkle.TabIndex = 8;
             this.btnSiparisEkle.Text = "EKLE";
             this.btnSiparisEkle.UseVisualStyleBackColor = true;
+            this.btnSiparisEkle.Click += new System.EventHandler(this.btnSiparisEkle_Click);
             // 
-            // dataGridView1
+            // dgvSiparisler
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(536, 548);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvSiparisler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSiparisler.Location = new System.Drawing.Point(12, 60);
+            this.dgvSiparisler.Name = "dgvSiparisler";
+            this.dgvSiparisler.RowHeadersWidth = 51;
+            this.dgvSiparisler.RowTemplate.Height = 29;
+            this.dgvSiparisler.Size = new System.Drawing.Size(536, 548);
+            this.dgvSiparisler.TabIndex = 4;
             // 
             // panel1
             // 
@@ -189,7 +183,7 @@
             // 
             this.lblMasaNo.BackColor = System.Drawing.Color.Gold;
             this.lblMasaNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMasaNo.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMasaNo.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblMasaNo.Location = new System.Drawing.Point(7, 23);
             this.lblMasaNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMasaNo.Name = "lblMasaNo";
@@ -264,11 +258,24 @@
             this.btnRezervasyon.Text = "MASA REZERVASYON";
             this.btnRezervasyon.UseVisualStyleBackColor = false;
             // 
+            // nmrAdet
+            // 
+            this.nmrAdet.Location = new System.Drawing.Point(398, 18);
+            this.nmrAdet.Name = "nmrAdet";
+            this.nmrAdet.Size = new System.Drawing.Size(150, 27);
+            this.nmrAdet.TabIndex = 21;
+            this.nmrAdet.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // SiparisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 620);
+            this.Controls.Add(this.nmrAdet);
             this.Controls.Add(this.btnRezervasyon);
             this.Controls.Add(this.btnMasalaraDon);
             this.Controls.Add(this.btnAdisyonYaz);
@@ -276,9 +283,8 @@
             this.Controls.Add(this.btnSiparisİptal);
             this.Controls.Add(this.btnOdemeAl);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSiparisler);
             this.Controls.Add(this.btnSiparisEkle);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.cmbUrunler);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -288,10 +294,10 @@
             this.Name = "SiparisForm";
             this.Text = "Sipariş Ekranı";
             this.Load += new System.EventHandler(this.SiparisForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSiparisler)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrAdet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,9 +308,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbUrunler;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button btnSiparisEkle;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSiparisler;
         private System.Windows.Forms.GroupBox panel1;
         private System.Windows.Forms.Label lblMasaNo;
         private System.Windows.Forms.Label lblOdemeTutari;
@@ -318,5 +323,6 @@
         private System.Windows.Forms.Button btnAdisyonYaz;
         private System.Windows.Forms.Button btnMasalaraDon;
         private System.Windows.Forms.Button btnRezervasyon;
+        private System.Windows.Forms.NumericUpDown nmrAdet;
     }
 }

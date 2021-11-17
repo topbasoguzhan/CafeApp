@@ -16,6 +16,8 @@ namespace CafeApp.Models
         public int KatSayisi { get; set; }
         public List<Kat> KatList { get; set; }
         public List<Urun> MenuList { get; set; }
+        public List<Siparis> SiparisList { get; set; }
+
 
         public void VeritabaniOku(string str,KafeVeri kafeDb)
         {

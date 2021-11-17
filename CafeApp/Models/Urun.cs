@@ -14,6 +14,7 @@ namespace CafeApp.Models
         public double UrunFiyat { get; set; }
         public string UrunAciklama { get; set; }
         public int UrunStok { get; set; }
+
         public byte[] UrunGorsel { get; set; }
 
         public override string ToString()

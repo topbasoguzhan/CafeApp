@@ -153,17 +153,7 @@ namespace CafeApp.Forms
             ListeofBindingList.Add(urun);
         }
 
-        private void dgvUrunler_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-
-        }
-
-        private void dgvUrunler_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
+       
 
         private void dgvUrunler_SelectionChanged(object sender, EventArgs e)
         {

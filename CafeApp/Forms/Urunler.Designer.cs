@@ -108,8 +108,7 @@
             this.dgvUrunler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUrunler.Size = new System.Drawing.Size(954, 268);
             this.dgvUrunler.TabIndex = 3;
-            this.dgvUrunler.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUrunler_CellContentClick);
-            this.dgvUrunler.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUrunler_CellDoubleClick);
+            
             this.dgvUrunler.SelectionChanged += new System.EventHandler(this.dgvUrunler_SelectionChanged);
             this.dgvUrunler.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvUrunler_MouseClick);
             // 
