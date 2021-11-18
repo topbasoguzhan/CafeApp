@@ -73,6 +73,16 @@ namespace CafeApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap GirisEkranArkaplan {
+            get {
+                object obj = ResourceManager.GetObject("GirisEkranArkaplan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap istockphoto_816807384_612x612 {
             get {
                 object obj = ResourceManager.GetObject("istockphoto-816807384-612x612", resourceCulture);
