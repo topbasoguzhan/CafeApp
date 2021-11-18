@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BeginForm));
             this.btnKaydet1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,9 +55,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(167, 9);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(156, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(412, 20);
+            this.label1.Size = new System.Drawing.Size(474, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Kafe uygulamamıza hoşgeldiniz! Lütfen adımları takip ediniz.";
             // 
@@ -66,10 +68,11 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(131, 55);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(130, 20);
+            this.label2.Size = new System.Drawing.Size(135, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Kat sayısını giriniz:";
             // 
@@ -90,12 +93,13 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(398, 55);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(127, 20);
+            this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Kafe Adını Giriniz:";
+            this.label3.Text = "Kafe adını giriniz:";
             // 
             // txtKafeAdi
             // 
@@ -114,6 +118,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::CafeApp.Properties.Resources.GirisEkranArkaplan;
             this.ClientSize = new System.Drawing.Size(800, 451);
             this.Controls.Add(this.txtKafeAdi);
             this.Controls.Add(this.label3);
@@ -121,8 +126,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnKaydet1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BeginForm";
-            this.Text = "Form1";
+            this.Text = "YOV CafeApp V1";
             this.Load += new System.EventHandler(this.BeginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

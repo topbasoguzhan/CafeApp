@@ -37,21 +37,30 @@ namespace CafeApp.Forms
             // 
             // btnMasaİslemleri
             // 
+            this.btnMasaİslemleri.BackgroundImage = global::CafeApp.Properties.Resources.RestoranResim;
+            this.btnMasaİslemleri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMasaİslemleri.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMasaİslemleri.ForeColor = System.Drawing.Color.Yellow;
             this.btnMasaİslemleri.Location = new System.Drawing.Point(48, 177);
             this.btnMasaİslemleri.Name = "btnMasaİslemleri";
             this.btnMasaİslemleri.Size = new System.Drawing.Size(259, 138);
             this.btnMasaİslemleri.TabIndex = 1;
             this.btnMasaİslemleri.Text = "Masa İşlemleri";
+            this.btnMasaİslemleri.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnMasaİslemleri.UseVisualStyleBackColor = true;
             this.btnMasaİslemleri.Click += new System.EventHandler(this.btnMasaİslemleri_Click);
             // 
             // btnZRaporu
             // 
+            this.btnZRaporu.BackgroundImage = global::CafeApp.Properties.Resources.zReport;
+            this.btnZRaporu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnZRaporu.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnZRaporu.Location = new System.Drawing.Point(48, 39);
             this.btnZRaporu.Name = "btnZRaporu";
             this.btnZRaporu.Size = new System.Drawing.Size(259, 132);
             this.btnZRaporu.TabIndex = 2;
             this.btnZRaporu.Text = "Z Raporu";
+            this.btnZRaporu.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnZRaporu.UseVisualStyleBackColor = true;
             // 
             // button1
