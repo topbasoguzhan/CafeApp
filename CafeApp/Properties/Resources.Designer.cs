@@ -155,7 +155,7 @@ namespace CafeApp.Properties {
         /// </summary>
         public static System.Drawing.Bitmap teahub_io_food_wallpaper_62902 {
             get {
-                object obj = ResourceManager.GetObject("teahub.io-food-wallpaper-62902", resourceCulture);
+                object obj = ResourceManager.GetObject("teahub_io_food_wallpaper_62902", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
