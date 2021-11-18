@@ -87,5 +87,16 @@ namespace CafeApp.Forms
             kafeDb.SiparisList.Add(siparis);
             
         }
+
+        private void btnMasalaraDon_Click(object sender, EventArgs e)
+        {
+            if (SiparislerList.Count()!=0)
+            {
+                ramMasa.MüsaitMi = false;
+            }
+            this.Hide();
+            Masaİslemleri masaİslemleri = new Masaİslemleri(ramMasa);
+            masaİslemleri.Show();
+        }
     }
 }

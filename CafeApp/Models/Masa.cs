@@ -25,7 +25,7 @@ namespace CafeApp.Models
         public string MasaninBulunduguKat { get; set; }
         public string MasaninKatTipi { get; set; }
         public string MasaID { get; set; }
-
+        
         public List<Siparis> SiparisList { get; set; }
 
     }

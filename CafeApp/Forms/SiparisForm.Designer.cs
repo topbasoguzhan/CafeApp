@@ -247,6 +247,7 @@
             this.btnMasalaraDon.TabIndex = 11;
             this.btnMasalaraDon.Text = "MASA EKRANINA DÖN";
             this.btnMasalaraDon.UseVisualStyleBackColor = false;
+            this.btnMasalaraDon.Click += new System.EventHandler(this.btnMasalaraDon_Click);
             // 
             // btnRezervasyon
             // 
