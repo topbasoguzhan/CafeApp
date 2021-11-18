@@ -9,7 +9,7 @@ namespace CafeApp.Models
     public class Masa
     {
         private bool _müsaitMi = true;
-
+        public int Id { get; set; }
         public bool MüsaitMi
         {
             get
@@ -26,6 +26,7 @@ namespace CafeApp.Models
         public string MasaninKatTipi { get; set; }
         public string MasaID { get; set; }
         
+
         public List<Siparis> SiparisList { get; set; }
 
     }

@@ -85,9 +85,17 @@ namespace CafeApp.Forms
         }
         private void Btn_Click(object? sender, EventArgs e)
         {
-            this.Hide();
-            //SiparisForm siparisForm = new SiparisForm();
-            //siparisForm.Show();
+            int x = (sender as Button).TabIndex;
+            foreach (var masa in MasalarList)
+            {
+                if (masa.Id==x)
+                {
+                    this.Hide();
+                    SiparisForm siparisForm = new SiparisForm(masa);
+                    siparisForm.Show(); 
+                }
+            }
+           
         }
 
         private void flowLayoutPanel1_DoubleClick(object sender, EventArgs e)
@@ -142,6 +150,7 @@ namespace CafeApp.Forms
                         btn.BackgroundImage = Properties.Resources.logo_default;
                         btn.Click += Btn_Click;
                         btn.TabIndex = i;
+                        masa.Id = i;
                         butonlar.Add(btn);
                         flowLayoutPanel1.Controls.Add(btn);
                         MasalarList.Add(masa);
