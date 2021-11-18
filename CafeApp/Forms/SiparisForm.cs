@@ -87,5 +87,12 @@ namespace CafeApp.Forms
             kafeDb.SiparisList.Add(siparis);
             
         }
+
+        private void btnMasalaraDon_Click(object sender, EventArgs e)
+        {
+            Masaİslemleri masaİslemleri = new Masaİslemleri();
+            masaİslemleri.Show();
+
+        }                               
     }
 }
