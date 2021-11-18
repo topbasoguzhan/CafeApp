@@ -26,11 +26,17 @@ namespace CafeApp.Forms
             
             InitializeComponent();
         }
+        public SiparisForm(Masa masa,KafeVeri DisaridangelenKafeDb)
+        {
+            ramMasa = masa;
+            kafeDb = DisaridangelenKafeDb;
+            InitializeComponent();
+        }
 
         private void SiparisForm_Load(object sender, EventArgs e)
         {
             
-            VeritabaniOku();
+           // VeritabaniOku();
             kafeDb.SiparisList = new List<Siparis>();
             cmbUrunler.Items.AddRange(kafeDb.MenuList.ToArray());
             lblMasaNo.Text = ramMasa.MasaID;
@@ -94,8 +100,9 @@ namespace CafeApp.Forms
             {
                 ramMasa.MüsaitMi = false;
             }
+
             this.Hide();
-            Masaİslemleri masaİslemleri = new Masaİslemleri(ramMasa);
+            Masaİslemleri masaİslemleri = new Masaİslemleri(ramMasa,kafeDb);
             masaİslemleri.Show();
         }
     }

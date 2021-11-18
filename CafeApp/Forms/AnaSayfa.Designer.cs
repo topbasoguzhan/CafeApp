@@ -85,6 +85,7 @@ namespace CafeApp.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AnaSayfa";
             this.Text = "AnaSayfa";
+            this.Load += new System.EventHandler(this.AnaSayfa_Load);
             this.ResumeLayout(false);
 
         }

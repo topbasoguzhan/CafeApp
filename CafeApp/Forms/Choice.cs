@@ -21,6 +21,11 @@ namespace CafeApp.Forms
             InitializeComponent();
 
         }
+        public Choice(KafeVeri gelenKafeDb)
+        {
+            InitializeComponent();
+            kafeDb = gelenKafeDb;
+        }
         public Kat KatBilgisi { get; set; }
 
         public KafeVeri kafeDb = new KafeVeri();
@@ -36,7 +41,7 @@ namespace CafeApp.Forms
             }
 
             cmbKatTip.DataSource = Enum.GetNames(typeof(KatTipi.KatYapisi));
-            VeritabaniOku();
+            //VeritabaniOku();
             kafeDb.KatList = new List<Kat>();
             kafeDb.MasaList = new List<Masa>();
         }
@@ -100,7 +105,7 @@ namespace CafeApp.Forms
                     Masa masas = new Masa();
                     masalar.Add(masas);
                     masaSayisi++;
-
+                    kafeDb.MasaList.Add(masas);
                 }
                 //kat.KatMasalari.AddRange(masalar);//oluşturulan yeni masayı masa listesine ekle
                 Alan GecerliALan = new Alan
@@ -112,11 +117,11 @@ namespace CafeApp.Forms
                     AlanAdi = cmbKat.SelectedIndex + ".kat" + cmbKatTip.SelectedItem.ToString()
                 };
 
-                MessageBox.Show("deneme");
+               
 
                 kat.Alanlar.Add(GecerliALan);
                 kafeDb.KatList.Add(kat);
-                kafeDb.MasaList.AddRange(masalar);
+                //kafeDb.MasaList.AddRange(masalar);
                 kafeDb.VeritabaninaYaz(_path, kafeDb);
             }
 
@@ -130,7 +135,7 @@ namespace CafeApp.Forms
         private void btnMenuyeGec_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Urunler urunler = new Urunler();
+            Urunler urunler = new Urunler(kafeDb);
             urunler.Show();
         }
 

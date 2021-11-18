@@ -48,6 +48,10 @@ namespace CafeApp.Models
         {
             try
             {
+                if (File.Exists(str))
+                {
+                    File.Delete("C://KafeEnvanteri//db.json");
+                }
                 FileStream fileStream = new FileStream(str, FileMode.OpenOrCreate);
                 StreamWriter writer = new StreamWriter(fileStream);
                 writer.Write(JsonConvert.SerializeObject(kafeDb, Formatting.Indented));

@@ -18,31 +18,62 @@ namespace CafeApp.Forms
 {
     public partial class Masaİslemleri : Form
     {
-        public Masaİslemleri()
-        {
-            InitializeComponent();
-            kafeDb.KatList = new List<Kat>();
-        }
-
-        public Masa DegiskenMasa = new Masa();
-        public Masaİslemleri(Masa MasaDisaridanGelen)
-        {
-            InitializeComponent();
-            kafeDb.KatList = new List<Kat>();
-            DegiskenMasa = MasaDisaridanGelen;
-        }
         public static string _path = "C://KafeEnvanteri//db.json";
         KafeVeri kafeDb = new KafeVeri();
         private Button btn;
         public List<Masa> MasalarList = new List<Masa>();
         public List<Button> butonlar = new List<Button>();
+        public Masa DegiskenMasa = new Masa();
+        public Masaİslemleri()
+        {
+            InitializeComponent();
+            kafeDb.KatList = new List<Kat>();
+        }
+        public Masaİslemleri(KafeVeri kafeDDisardanGeKafeDb)
+        {
+            InitializeComponent();
+            kafeDb = kafeDDisardanGeKafeDb;
+
+        }
+        public Masaİslemleri(Masa MasaDisaridanGelen,KafeVeri disaridanKafeVeri)
+        {
+            InitializeComponent();
+            kafeDb = disaridanKafeVeri;
+            DegiskenMasa = MasaDisaridanGelen;
+
+
+            if (DegiskenMasa.Id != null)
+            {
+                foreach (Masa masa in kafeDb.MasaList)
+                {
+                    if (DegiskenMasa.Id == masa.Id)
+                    {
+                        //
+                        foreach (var button in butonlar)
+                        {
+                            if (masa.Id == button.TabIndex)
+                            {
+                                button.BackgroundImage = Properties.Resources.logo_doluMasa;
+                                masa.MüsaitMi = false;
+                            }
+                        }
+                    }
+                }
+            }
+            kafeDb.VeritabaninaYaz(_path,kafeDb);
+
+        }
+        
         private void Masaİslemleri_Load(object sender, EventArgs e)
         {
-            VeritabaniOku();
-            if (MasalarList.Count == 0)
+            //VeritabaniOku();
+            MasalarList = kafeDb.MasaList;
+            if (MasalarList.Count != 0)
             {
                 MasaOlustur();
             }
+
+
 
             if (DegiskenMasa.MasaID != null)
             {
@@ -91,7 +122,7 @@ namespace CafeApp.Forms
                 if (masa.Id==x)
                 {
                     this.Hide();
-                    SiparisForm siparisForm = new SiparisForm(masa);
+                    SiparisForm siparisForm = new SiparisForm(masa,kafeDb);
                     siparisForm.Show(); 
                 }
             }
@@ -154,10 +185,14 @@ namespace CafeApp.Forms
                         butonlar.Add(btn);
                         flowLayoutPanel1.Controls.Add(btn);
                         MasalarList.Add(masa);
+                        kafeDb.MasaList.Add(masa);
+                        alan.MasaList.Add(masa);
                     }
                 }
             }
         }
+
+        
         
 
     }

@@ -17,16 +17,22 @@ namespace CafeApp.Forms
 {
     public partial class Urunler : Form
     {
+        public static string _path = "C://KafeEnvanteri//db.json";
+        KafeVeri kafeDb = new KafeVeri();
+        public BindingList<Urun> ListeofBindingList;
         public Urunler()
         {
             InitializeComponent();
         }
-        public static string _path = "C://KafeEnvanteri//db.json";
-        KafeVeri kafeDb = new KafeVeri();
-        public BindingList<Urun> ListeofBindingList;
+        public Urunler(KafeVeri kafeVeriDKafeDb)
+        {
+            InitializeComponent();
+            kafeDb = kafeVeriDKafeDb;
+        }
+
         private void Urunler_Load(object sender, EventArgs e)
         {
-            VeritabaniOku();
+           // VeritabaniOku();
 
             kafeDb.MenuList = new List<Urun>();
 
@@ -131,7 +137,7 @@ namespace CafeApp.Forms
             {
                 dgvUrunler.Rows.RemoveAt(dgvUrunlerSelectedRow.Index);
             }//veritabanından silinme operasyonu yazılacak
-            
+
             Urun urun = new Urun()
             {
                 UrunAd = txtUrunAd.Text,
@@ -153,11 +159,11 @@ namespace CafeApp.Forms
             ListeofBindingList.Add(urun);
         }
 
-       
+
 
         private void dgvUrunler_SelectionChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dgvUrunler_MouseClick(object sender, MouseEventArgs e)
@@ -184,7 +190,7 @@ namespace CafeApp.Forms
         private void btnTamam_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AnaSayfa anaSayfa = new AnaSayfa();
+            AnaSayfa anaSayfa = new AnaSayfa(kafeDb);
             anaSayfa.Show();
         }
     }
