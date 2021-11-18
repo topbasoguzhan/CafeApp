@@ -76,6 +76,7 @@
             // btnSil
             // 
             this.btnSil.BackColor = System.Drawing.Color.Red;
+            this.btnSil.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSil.Location = new System.Drawing.Point(710, 196);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(111, 48);
@@ -87,6 +88,7 @@
             // btnUrunEkle
             // 
             this.btnUrunEkle.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnUrunEkle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUrunEkle.ForeColor = System.Drawing.Color.Black;
             this.btnUrunEkle.Location = new System.Drawing.Point(710, 24);
             this.btnUrunEkle.Name = "btnUrunEkle";
@@ -108,7 +110,6 @@
             this.dgvUrunler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUrunler.Size = new System.Drawing.Size(954, 268);
             this.dgvUrunler.TabIndex = 3;
-            
             this.dgvUrunler.SelectionChanged += new System.EventHandler(this.dgvUrunler_SelectionChanged);
             this.dgvUrunler.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvUrunler_MouseClick);
             // 
@@ -123,7 +124,7 @@
             // 
             // txtUrunAciklamasi
             // 
-            this.txtUrunAciklamasi.Location = new System.Drawing.Point(13, 105);
+            this.txtUrunAciklamasi.Location = new System.Drawing.Point(11, 105);
             this.txtUrunAciklamasi.Multiline = true;
             this.txtUrunAciklamasi.Name = "txtUrunAciklamasi";
             this.txtUrunAciklamasi.Size = new System.Drawing.Size(318, 139);
@@ -174,6 +175,7 @@
             // btnGuncelle
             // 
             this.btnGuncelle.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGuncelle.ForeColor = System.Drawing.Color.Black;
             this.btnGuncelle.Location = new System.Drawing.Point(710, 105);
             this.btnGuncelle.Name = "btnGuncelle";
@@ -185,7 +187,8 @@
             // 
             // btnTamam
             // 
-            this.btnTamam.BackColor = System.Drawing.Color.Blue;
+            this.btnTamam.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnTamam.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTamam.ForeColor = System.Drawing.Color.Black;
             this.btnTamam.Location = new System.Drawing.Point(856, 106);
             this.btnTamam.Name = "btnTamam";
@@ -199,6 +202,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CafeApp.Properties.Resources.teahub_io_food_wallpaper_62902;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(995, 547);
             this.Controls.Add(this.btnTamam);
             this.Controls.Add(this.btnGuncelle);

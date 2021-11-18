@@ -36,6 +36,8 @@ namespace CafeApp.Forms
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackgroundImage = global::CafeApp.Properties.Resources.abstract_hexagon_pattern;
+            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1166, 683);

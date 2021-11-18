@@ -73,6 +73,16 @@ namespace CafeApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap abstract_hexagon_pattern {
+            get {
+                object obj = ResourceManager.GetObject("abstract-hexagon-pattern", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap GirisEkranArkaplan {
             get {
                 object obj = ResourceManager.GetObject("GirisEkranArkaplan", resourceCulture);
@@ -123,9 +133,29 @@ namespace CafeApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap MasaİslemleriArkaPlan {
+            get {
+                object obj = ResourceManager.GetObject("MasaİslemleriArkaPlan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap RestoranResim {
             get {
                 object obj = ResourceManager.GetObject("RestoranResim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap teahub_io_food_wallpaper_62902 {
+            get {
+                object obj = ResourceManager.GetObject("teahub_io_food_wallpaper_62902", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -96,7 +96,7 @@ namespace CafeApp.Forms
                     btn.Width = 150;
                     btn.Height = 100;
                     btn.BackColor = Color.Gray;
-                    btn.ForeColor = Color.Red;
+                    btn.ForeColor = Color.LightPink;
                     btn.Margin = new Padding(2);
                     btn.Click += Btn_Click;
                     btn.TabIndex = i;
