@@ -54,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gill Sans MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.ForeColor = System.Drawing.Color.MistyRose;
             this.label1.Location = new System.Drawing.Point(14, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 33);
@@ -73,18 +73,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(329, 15);
+            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.MistyRose;
+            this.label2.Location = new System.Drawing.Point(341, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(217, 32);
+            this.label2.Size = new System.Drawing.Size(208, 33);
             this.label2.TabIndex = 3;
             this.label2.Text = "Kat Tipini Seçiniz:";
             // 
             // cmbKatTip
             // 
             this.cmbKatTip.FormattingEnabled = true;
-            this.cmbKatTip.Location = new System.Drawing.Point(541, 20);
+            this.cmbKatTip.Location = new System.Drawing.Point(543, 20);
             this.cmbKatTip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbKatTip.Name = "cmbKatTip";
             this.cmbKatTip.Size = new System.Drawing.Size(156, 28);
@@ -93,11 +93,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(703, 17);
+            this.label3.Font = new System.Drawing.Font("Gill Sans MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.MistyRose;
+            this.label3.Location = new System.Drawing.Point(715, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 32);
+            this.label3.Size = new System.Drawing.Size(141, 33);
             this.label3.TabIndex = 5;
             this.label3.Text = "Masa Sayısı:";
             // 
@@ -123,10 +123,12 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 95);
+            this.flowLayoutPanel1.BackgroundImage = global::CafeApp.Properties.Resources.MasaİslemleriArkaPlan;
+            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 80);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1293, 551);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1293, 634);
             this.flowLayoutPanel1.TabIndex = 8;
             this.flowLayoutPanel1.Click += new System.EventHandler(this.Btn_Click);
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
@@ -145,6 +147,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1331, 727);
             this.Controls.Add(this.btnMenuyeGec);
             this.Controls.Add(this.flowLayoutPanel1);
