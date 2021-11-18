@@ -19,11 +19,13 @@ namespace CafeApp.Forms
     public partial class Masaİslemleri : Form
     {
         public static string _path = "C://KafeEnvanteri//db.json";
-        KafeVeri kafeDb = new KafeVeri();
+        public KafeVeri kafeDb = new KafeVeri();
         private Button btn;
         public List<Masa> MasalarList = new List<Masa>();
+        public List<Masa> MasalarListİki = new List<Masa>();
         public List<Button> butonlar = new List<Button>();
         public Masa DegiskenMasa = new Masa();
+        
         public Masaİslemleri()
         {
             InitializeComponent();
@@ -33,59 +35,44 @@ namespace CafeApp.Forms
         {
             InitializeComponent();
             kafeDb = kafeDDisardanGeKafeDb;
-
+            
+            
         }
-        public Masaİslemleri(Masa MasaDisaridanGelen,KafeVeri disaridanKafeVeri)
+        public Masaİslemleri(Masa MasaDisaridanGelen, KafeVeri disaridanKafeVeri)
         {
             InitializeComponent();
             kafeDb = disaridanKafeVeri;
-            DegiskenMasa = MasaDisaridanGelen;
-
-
-            if (DegiskenMasa.Id != null)
+            foreach (Masa masa in kafeDb.MasaList)
             {
-                foreach (Masa masa in kafeDb.MasaList)
+                if (MasaDisaridanGelen.Id == masa.Id)
                 {
-                    if (DegiskenMasa.Id == masa.Id)
-                    {
-                        //
-                        foreach (var button in butonlar)
-                        {
-                            if (masa.Id == button.TabIndex)
-                            {
-                                button.BackgroundImage = Properties.Resources.logo_doluMasa;
-                                masa.MüsaitMi = false;
-                            }
-                        }
-                    }
+                    masa.MüsaitMi = false;
+                    //siparis kaydetme 
+                    //siparis kaldırma
                 }
             }
-            kafeDb.VeritabaninaYaz(_path,kafeDb);
+            //kafeDb.VeritabaninaYaz(_path,kafeDb);
+            VeritabaniYaz();
+            
 
+            VeritabaniOku();
+            
         }
-        
+
         private void Masaİslemleri_Load(object sender, EventArgs e)
         {
-            //VeritabaniOku();
+            
             MasalarList = kafeDb.MasaList;
-            if (MasalarList.Count != 0)
+
+            if (kafeDb.MasaList[0].Id==0)//Masa üretilen cons
             {
                 MasaOlustur();
             }
-
-
-
-            if (DegiskenMasa.MasaID != null)
+            else
             {
-                foreach (var button in butonlar)
-                {
-                    if (button.Text == DegiskenMasa.MasaID)
-                    {
-                        button.BackgroundImage = Resources.logo_doluMasa;
-                    }
-                }
+                MasaButonlariniGetir();
+               
             }
-
 
 
         }
@@ -108,25 +95,43 @@ namespace CafeApp.Forms
                 {
                     Debug.WriteLine(ex);
                 }
+
             }
             else
             {
                 Directory.CreateDirectory("C://KafeEnvanteri");
             }
         }
+
+        public void VeritabaniYaz()
+        {
+            try
+            {
+
+                FileStream fileStream = new FileStream(_path, FileMode.OpenOrCreate);
+                StreamWriter writer = new StreamWriter(fileStream);
+                writer.Write(JsonConvert.SerializeObject(kafeDb, Formatting.Indented));
+                writer.Close();
+                writer.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+        }
         private void Btn_Click(object? sender, EventArgs e)
         {
             int x = (sender as Button).TabIndex;
-            foreach (var masa in MasalarList)
+            foreach (var masa in kafeDb.MasaList)
             {
-                if (masa.Id==x)
+                if (masa.Id == x)
                 {
                     this.Hide();
-                    SiparisForm siparisForm = new SiparisForm(masa,kafeDb);
-                    siparisForm.Show(); 
+                    SiparisForm siparisForm = new SiparisForm(masa, kafeDb);
+                    siparisForm.Show();
                 }
             }
-           
+
         }
 
         private void flowLayoutPanel1_DoubleClick(object sender, EventArgs e)
@@ -142,26 +147,19 @@ namespace CafeApp.Forms
             }
         }
 
-        public void BtnImageChange(Masa masa)
-        {
-            foreach (Button control in flowLayoutPanel1.Controls.Cast<Button>())
-            {
-                if (control.Text == masa.MasaID)
-                {
-                    control.BackgroundImage = Properties.Resources.logo_doluMasa;
-                }
-            }
-        }
-
+       
         public void MasaOlustur()
         {
             foreach (var kat in kafeDb.KatList)
             {
                 foreach (var alan in kat.Alanlar)
                 {
+                    int deg = alan.MasaList.Count;
+                    alan.MasaList.Clear();
+                    MasalarList.Clear();
                     string alanAdi = alan.KatTipi;
                     string bulundugukat = alan.BulunduguKat.ToString();
-                    for (int i = 1; i <= alan.MasaList.Count; i++)
+                    for (int i = 1; i <= deg; i++)
                     {
                         Masa masa = new Masa()
                         {
@@ -183,7 +181,7 @@ namespace CafeApp.Forms
                         btn.TextAlign = ContentAlignment.MiddleCenter;
                         btn.BackColor = Color.White;
                         btn.ForeColor = Color.DarkRed;
-                        btn.Font = new Font("Segoe UI",7,FontStyle.Bold);
+                        btn.Font = new Font("Segoe UI", 7, FontStyle.Bold);
                         btn.Margin = new Padding(2);
                         btn.BackgroundImageLayout = ImageLayout.Stretch;
                         btn.BackgroundImage = Properties.Resources.logo_default;
@@ -191,17 +189,57 @@ namespace CafeApp.Forms
                         btn.TabIndex = i;
                         masa.Id = i;
                         butonlar.Add(btn);
+                        
                         flowLayoutPanel1.Controls.Add(btn);
-                        MasalarList.Add(masa);
-                        kafeDb.MasaList.Add(masa);
                         alan.MasaList.Add(masa);
+                        //kafeDb.MasaList.Add(masa);
+                        MasalarListİki.Add(masa);
+                        
                     }
                 }
             }
+            kafeDb.MasaList.Clear();
+            kafeDb.MasaList.AddRange(MasalarListİki);
+            
+            kafeDb.VeritabaninaYaz(_path,kafeDb);
         }
 
-        
-        
+        public void MasaButonlariniGetir()
+        {
+            foreach (Masa masa in kafeDb.MasaList)
+            {
+                btn = new Button();
+                btn.Text = masa.MasaID;
+                btn.Width = 150;
+                btn.Height = 100;
+                btn.AutoSize = false;
+                var margin = btn.Margin;
+                margin.Left = 4;
+                margin.Right = 4;
+                margin.Top = 4;
+                margin.Bottom = 4;
+                btn.TextAlign = ContentAlignment.MiddleCenter;
+                btn.BackColor = Color.White;
+                btn.ForeColor = Color.DarkRed;
+                btn.Font = new Font("Segoe UI", 7, FontStyle.Bold);
+                btn.Margin = new Padding(2);
+                btn.BackgroundImageLayout = ImageLayout.Stretch;
+                if (masa.MüsaitMi==true)
+                {
+                    btn.BackgroundImage = Resources.logo_default;
+                }
+                else
+                {
+                    btn.BackgroundImage = Resources.logo_doluMasa;
+                }
+                btn.Click += Btn_Click;
+                btn.TabIndex = masa.Id;
+                butonlar.Add(btn);
+                flowLayoutPanel1.Controls.Add(btn);
+            }
+        }
+
+
 
     }
 }

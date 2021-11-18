@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace CafeApp.Models
@@ -18,7 +19,7 @@ namespace CafeApp.Models
         public List<Urun> MenuList { get; set; }
         public List<Siparis> SiparisList { get; set; }
 
-
+        
         public void VeritabaniOku(string str,KafeVeri kafeDb)
         {
 
@@ -46,12 +47,10 @@ namespace CafeApp.Models
 
         public void VeritabaninaYaz(string str,KafeVeri kafeDb)
         {
+            
             try
             {
-                if (File.Exists(str))
-                {
-                    File.Delete("C://KafeEnvanteri//db.json");
-                }
+                
                 FileStream fileStream = new FileStream(str, FileMode.OpenOrCreate);
                 StreamWriter writer = new StreamWriter(fileStream);
                 writer.Write(JsonConvert.SerializeObject(kafeDb, Formatting.Indented));
@@ -60,7 +59,7 @@ namespace CafeApp.Models
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
+                MessageBox.Show(ex.Message);
             }
             
         }
