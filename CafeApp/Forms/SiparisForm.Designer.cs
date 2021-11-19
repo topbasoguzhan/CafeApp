@@ -227,6 +227,7 @@
             this.btnAdisyonYaz.TabIndex = 15;
             this.btnAdisyonYaz.Text = "ADİSYON YAZDIR";
             this.btnAdisyonYaz.UseVisualStyleBackColor = false;
+            this.btnAdisyonYaz.Click += new System.EventHandler(this.btnAdisyonYaz_Click);
             // 
             // btnMasalaraDon
             // 

@@ -18,6 +18,7 @@ namespace CafeApp.Forms
     {
         private Masa ramMasa = new Masa();
         public static string _path = "C://KafeEnvanteri//db.json";
+        public static string _pathAdisyon = "C://KafeEnvanteri//adisyon.txt";
         KafeVeri kafeDb = new KafeVeri();
         public BindingList<Urun> SiparislerList = new BindingList<Urun>();
         public SiparisForm(Masa masa)
@@ -132,6 +133,49 @@ namespace CafeApp.Forms
             //    }
             //}
 
+        }
+
+        private void btnAdisyonYaz_Click(object sender, EventArgs e)
+        {
+
+
+            using (System.IO.StreamWriter file = 
+                new System.IO.StreamWriter(_pathAdisyon, false))
+            {
+                
+                //file.WriteLine("  ");
+                file.WriteLine("Masa No: " + ramMasa.MasaID); 
+               
+                file.WriteLine("--- Masa Detay : ---");
+                file.WriteLine(" |  Ürün | Fiyat| Adet");
+                string lines = "";
+
+                for (int row = 0; row < ramMasa.SiparisList.Count; row++)
+                {
+                    for (int col = 0; col <=2; col++)
+                    {
+
+                        lines = lines + " | " + dgvSiparisler.Rows[row].Cells[col].Value.ToString();
+                        if (col == 2)
+                        {
+
+                            file.WriteLine(lines);
+                            lines = "";
+                        }
+                    }
+
+
+                }
+                file.WriteLine(" ------------------------");
+
+                file.WriteLine(" Toplam :" + ramMasa.SiparisList.FirstOrDefault().UrunlerList.FirstOrDefault().UrunFiyat.ToString());
+
+            }
+
+            var print = new ProcessStartInfo("yazdir.txt");
+            print.UseShellExecute = true;
+            print.Verb = "print";
+            var process = System.Diagnostics.Process.Start(print);
         }
     }
 }
