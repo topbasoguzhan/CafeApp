@@ -245,7 +245,11 @@ namespace CafeApp.Forms
             }
         }
 
-
-
+        private void btnAnasayfa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AnaSayfa anaSayfa = new AnaSayfa(kafeDb);
+            anaSayfa.Show();
+        }
     }
 }

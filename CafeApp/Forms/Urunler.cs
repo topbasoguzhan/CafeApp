@@ -32,12 +32,24 @@ namespace CafeApp.Forms
 
         private void Urunler_Load(object sender, EventArgs e)
         {
-           // VeritabaniOku();
-
-            kafeDb.MenuList = new List<Urun>();
-
+            // VeritabaniOku();
             ListeofBindingList = new BindingList<Urun>();
             dgvUrunler.DataSource = ListeofBindingList;
+            if (kafeDb.MenuList != null)
+            {
+                foreach (Urun urun in kafeDb.MenuList)
+                {
+                    ListeofBindingList.Add(urun);
+                }
+            }
+            else
+            {
+                kafeDb.MenuList = new List<Urun>();
+            }
+
+
+
+
 
             //dgvUrunler.ReadOnly = true;
             //dgvUrunler.AllowUserToAddRows = false;

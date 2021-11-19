@@ -35,5 +35,12 @@ namespace CafeApp.Forms
         {
 
         }
+
+        private void btnUrunler_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Urunler urunler = new Urunler(KafeDb);
+            urunler.Show();
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace CafeApp.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaSayfa));
             this.btnMasaİslemleri = new System.Windows.Forms.Button();
             this.btnZRaporu = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUrunler = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMasaİslemleri
@@ -63,14 +63,15 @@ namespace CafeApp.Forms
             this.btnZRaporu.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnZRaporu.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnUrunler
             // 
-            this.button1.Location = new System.Drawing.Point(48, 321);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(259, 120);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUrunler.Location = new System.Drawing.Point(48, 321);
+            this.btnUrunler.Name = "btnUrunler";
+            this.btnUrunler.Size = new System.Drawing.Size(259, 120);
+            this.btnUrunler.TabIndex = 3;
+            this.btnUrunler.Text = "Urunler";
+            this.btnUrunler.UseVisualStyleBackColor = true;
+            this.btnUrunler.Click += new System.EventHandler(this.btnUrunler_Click);
             // 
             // AnaSayfa
             // 
@@ -79,7 +80,7 @@ namespace CafeApp.Forms
             this.BackgroundImage = global::CafeApp.Properties.Resources._1306126;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(997, 569);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUrunler);
             this.Controls.Add(this.btnZRaporu);
             this.Controls.Add(this.btnMasaİslemleri);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -93,6 +94,6 @@ namespace CafeApp.Forms
         #endregion
         private System.Windows.Forms.Button btnMasaİslemleri;
         private System.Windows.Forms.Button btnZRaporu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUrunler;
     }
 }
