@@ -43,10 +43,8 @@
             this.lblMasaNo = new System.Windows.Forms.Label();
             this.btnOdemeAl = new System.Windows.Forms.Button();
             this.btnSiparisİptal = new System.Windows.Forms.Button();
-            this.btnAdisyonSil = new System.Windows.Forms.Button();
             this.btnAdisyonYaz = new System.Windows.Forms.Button();
             this.btnMasalaraDon = new System.Windows.Forms.Button();
-            this.btnRezervasyon = new System.Windows.Forms.Button();
             this.nmrAdet = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiparisler)).BeginInit();
             this.panel1.SuspendLayout();
@@ -197,10 +195,10 @@
             // 
             this.btnOdemeAl.BackColor = System.Drawing.Color.PaleGreen;
             this.btnOdemeAl.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnOdemeAl.Location = new System.Drawing.Point(554, 267);
+            this.btnOdemeAl.Location = new System.Drawing.Point(554, 360);
             this.btnOdemeAl.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnOdemeAl.Name = "btnOdemeAl";
-            this.btnOdemeAl.Size = new System.Drawing.Size(145, 88);
+            this.btnOdemeAl.Size = new System.Drawing.Size(272, 72);
             this.btnOdemeAl.TabIndex = 10;
             this.btnOdemeAl.Text = "ÖDEME AL";
             this.btnOdemeAl.UseVisualStyleBackColor = false;
@@ -209,25 +207,14 @@
             // 
             this.btnSiparisİptal.BackColor = System.Drawing.Color.Tomato;
             this.btnSiparisİptal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSiparisİptal.Location = new System.Drawing.Point(706, 267);
+            this.btnSiparisİptal.Location = new System.Drawing.Point(554, 284);
             this.btnSiparisİptal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnSiparisİptal.Name = "btnSiparisİptal";
-            this.btnSiparisİptal.Size = new System.Drawing.Size(120, 88);
+            this.btnSiparisİptal.Size = new System.Drawing.Size(272, 68);
             this.btnSiparisİptal.TabIndex = 9;
             this.btnSiparisİptal.Text = "SİPARİŞ İPTAL";
             this.btnSiparisİptal.UseVisualStyleBackColor = false;
-            // 
-            // btnAdisyonSil
-            // 
-            this.btnAdisyonSil.BackColor = System.Drawing.Color.DarkGray;
-            this.btnAdisyonSil.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAdisyonSil.Location = new System.Drawing.Point(693, 440);
-            this.btnAdisyonSil.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnAdisyonSil.Name = "btnAdisyonSil";
-            this.btnAdisyonSil.Size = new System.Drawing.Size(134, 80);
-            this.btnAdisyonSil.TabIndex = 9;
-            this.btnAdisyonSil.Text = "ADİSYONU SİL";
-            this.btnAdisyonSil.UseVisualStyleBackColor = false;
+            this.btnSiparisİptal.Click += new System.EventHandler(this.btnSiparisİptal_Click);
             // 
             // btnAdisyonYaz
             // 
@@ -236,7 +223,7 @@
             this.btnAdisyonYaz.Location = new System.Drawing.Point(554, 440);
             this.btnAdisyonYaz.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnAdisyonYaz.Name = "btnAdisyonYaz";
-            this.btnAdisyonYaz.Size = new System.Drawing.Size(133, 80);
+            this.btnAdisyonYaz.Size = new System.Drawing.Size(272, 80);
             this.btnAdisyonYaz.TabIndex = 15;
             this.btnAdisyonYaz.Text = "ADİSYON YAZDIR";
             this.btnAdisyonYaz.UseVisualStyleBackColor = false;
@@ -253,17 +240,6 @@
             this.btnMasalaraDon.Text = "MASA EKRANINA DÖN";
             this.btnMasalaraDon.UseVisualStyleBackColor = false;
             this.btnMasalaraDon.Click += new System.EventHandler(this.btnMasalaraDon_Click);
-            // 
-            // btnRezervasyon
-            // 
-            this.btnRezervasyon.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnRezervasyon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRezervasyon.Location = new System.Drawing.Point(554, 361);
-            this.btnRezervasyon.Name = "btnRezervasyon";
-            this.btnRezervasyon.Size = new System.Drawing.Size(272, 73);
-            this.btnRezervasyon.TabIndex = 20;
-            this.btnRezervasyon.Text = "MASA REZERVASYON";
-            this.btnRezervasyon.UseVisualStyleBackColor = false;
             // 
             // nmrAdet
             // 
@@ -283,10 +259,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 620);
             this.Controls.Add(this.nmrAdet);
-            this.Controls.Add(this.btnRezervasyon);
             this.Controls.Add(this.btnMasalaraDon);
             this.Controls.Add(this.btnAdisyonYaz);
-            this.Controls.Add(this.btnAdisyonSil);
             this.Controls.Add(this.btnSiparisİptal);
             this.Controls.Add(this.btnOdemeAl);
             this.Controls.Add(this.panel1);
@@ -326,10 +300,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnOdemeAl;
         private System.Windows.Forms.Button btnSiparisİptal;
-        private System.Windows.Forms.Button btnAdisyonSil;
         private System.Windows.Forms.Button btnAdisyonYaz;
         private System.Windows.Forms.Button btnMasalaraDon;
-        private System.Windows.Forms.Button btnRezervasyon;
         private System.Windows.Forms.NumericUpDown nmrAdet;
     }
 }

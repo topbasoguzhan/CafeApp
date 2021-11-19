@@ -47,11 +47,17 @@ namespace CafeApp.Forms
                 if (MasaDisaridanGelen.Id == masa.Id)
                 {
                     masa.MüsaitMi = false;
+                    if (MasaDisaridanGelen.SiparisList[0].UrunlerList.Count != 0)
+                    {
+                        
+                        masa.SiparisList = MasaDisaridanGelen.SiparisList;
+                    }
+                    
                     //siparis kaydetme 
                     //siparis kaldırma
                 }
             }
-            //kafeDb.VeritabaninaYaz(_path,kafeDb);
+            
             VeritabaniYaz();
             
 
@@ -116,7 +122,7 @@ namespace CafeApp.Forms
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
+                MessageBox.Show(ex.Message);
             }
         }
         private void Btn_Click(object? sender, EventArgs e)

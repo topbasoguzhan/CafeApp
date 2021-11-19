@@ -41,7 +41,7 @@ namespace CafeApp.Forms
             cmbUrunler.Items.AddRange(kafeDb.MenuList.ToArray());
             lblMasaNo.Text = ramMasa.MasaID;
             dgvSiparisler.DataSource =SiparislerList;
-
+            ramMasa.SiparisList = new List<Siparis>();
         }
 
         private void lblMasaNo_Click(object sender, EventArgs e)
@@ -79,17 +79,17 @@ namespace CafeApp.Forms
             Siparis siparis = new Siparis()
             {
                 SiparisDateTime = DateTime.Now,
-                SiparisMasasi = ramMasa,
                 TeslimEdildiMi = false,
                 
             };
-
+            
             siparis.UrunlerList = new List<Urun>();
             for (int i = 1; i <= nmrAdet.Value; i++)
             {
                 siparis.UrunlerList.Add((Urun)cmbUrunler.SelectedItem);
                 SiparislerList.Add((Urun)cmbUrunler.SelectedItem);
             }
+            ramMasa.SiparisList.Add(siparis);
             kafeDb.SiparisList.Add(siparis);
             
         }
@@ -104,6 +104,34 @@ namespace CafeApp.Forms
             this.Hide();
             Masaİslemleri masaİslemleri = new Masaİslemleri(ramMasa,kafeDb);
             masaİslemleri.Show();
+        }
+
+        private void btnSiparisİptal_Click(object sender, EventArgs e)
+        {
+            //foreach (Siparis siparis in ramMasa.SiparisList)
+            //{
+            //    foreach (Urun urun in siparis.UrunlerList.ToList())
+            //    {
+                    
+            //        if (dgvSiparisler.SelectedRows[0].Cells[1].ToString() == urun.UrunAd)
+            //        {
+            //            SiparislerList.Remove(urun);
+            //            siparis.UrunlerList.Remove(urun);
+            //        }
+            //    }
+            //}
+            //foreach (Siparis siparis in kafeDb.SiparisList)
+            //{
+            //    foreach (Urun urun in siparis.UrunlerList.ToList())
+            //    {
+            //        if (dgvSiparisler.SelectedRows[0].Cells[1].ToString() == urun.UrunAd)
+            //        {
+            //            siparis.UrunlerList.Remove(urun);
+                        
+            //        }
+            //    }
+            //}
+
         }
     }
 }

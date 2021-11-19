@@ -10,7 +10,7 @@ namespace CafeApp.Models
     {
         private DateTime _siparisDateTime,_siparisTeslimDateTime,_siparisTeslimSüresiDateTime;
         public List<Urun> UrunlerList { get; set; }
-        public Masa SiparisMasasi { get; set; }
+        
         public DateTime SiparisDateTime
         {
             get { return _siparisDateTime;}
